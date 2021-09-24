@@ -8,6 +8,13 @@
 </head>
 <body> 
     <h1>Homepage</h1>
-    <a href="/login/auth0">Login</a>
+    
+    {% if request.user.is_authenticated %}
+        <h3>hello {{request.user}}</h3>
+    {% else %}
+        <a href="/login/auth0">Login</a>
+    {% endif %}
+        
+    
 </body>
 </html>

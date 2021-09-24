@@ -54,14 +54,11 @@ SOCIAL_AUTH_AUTH0_SCOPE=[
     'email'
 ]
 
-AUTHENTICATION_BACKENDS={
-    'social_core.backends.auth0.Auth0OAuth2',
+AUTHENTICATION_BACKENDS = {
+    'app.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend'
 }
 
-LOGIN_URL='/login/auth0'
-LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL='/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,3 +146,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'app.User'
+
+
+LOGIN_URL='/login/auth0'
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
