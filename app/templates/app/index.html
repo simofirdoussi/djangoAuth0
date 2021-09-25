@@ -11,6 +11,7 @@
     
     {% if request.user.is_authenticated %}
         <h3>hello {{request.user}}</h3>
+        <a  href="/logout">Logout</a>
     {% else %}
         <a href="/login/auth0">Login</a>
     {% endif %}
